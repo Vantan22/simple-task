@@ -1,0 +1,39 @@
+@import '../../assets/sass/color.scss';
+
+.containerLogin{
+    display: flex;
+    background-color: $grayColor;
+    height: 100vh;
+    width: 100vw;
+    &-left{
+        background-color: $whiteColor;
+        display: flex;
+        flex-direction: column;  
+        min-width: 51.007%;
+        padding-left: 247px;
+        position: relative;
+        &-logo{
+            width: 97px;
+            height: 32px;
+            margin-top: 24px;
+            // margin-bottom: 177px;
+        }
+    }
+    &-right{
+        position: relative;
+        min-width: calc(100% - 51.007%);
+        &-backGround{
+            position: absolute;
+            width: 512px;
+            height: 769px;
+            margin: 56px 0 0 56px;
+        }
+        &-demoDashboard{
+            position: absolute;
+            width: 616px;
+            height: 532px;
+            z-index: 100;
+            margin: 174px 0 0 94px;
+        }
+    }
+}

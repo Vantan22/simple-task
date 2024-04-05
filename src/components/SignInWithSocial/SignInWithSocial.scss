@@ -1,0 +1,26 @@
+@import '../../assets/sass/color.scss';
+
+.signInWithSocial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-social {
+        display: flex;
+        column-gap: 12px;
+        &-item {
+            height: 46px;
+            width: 46px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            border: 1px solid $grayColor;
+            cursor: pointer;
+        }
+    }
+    &-title {
+        font-size: 14px;
+        line-height: 21px;
+        color: $grayColorDark;
+    }
+}
