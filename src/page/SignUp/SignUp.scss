@@ -9,14 +9,17 @@
     }
     &-wrapCheckAndForgot{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
         margin-top: 24px;
+        position: relative;
         a{
             text-decoration: none;
             font-size: 14px;
             color: $blueColor;
             font-weight: 600;
+        }
+        .textErrorValidator{
+            bottom: -18px;
         }
     }
     &-btn{
