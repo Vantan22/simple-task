@@ -19,7 +19,7 @@ const Auth = ({children}) => {
         </div>
     </div>
   )
-}
+};
 
 Auth.propTypes = {
     children: PropTypes.node.isRequired,
