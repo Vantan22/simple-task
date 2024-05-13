@@ -18,7 +18,7 @@ const Widget = ({ title, nameSeeAll, linkSeeAll, listWidget }) => {
                     <img className='widget-navigation-seeMore-icon' src={IconArrownRight} alt='IconArrownRight' />
                 </div>
             </div>
-            <div className="widget-content">
+            <div className="widget-content" >
                 {listWidget.map((item, index) => (
                     <div className="widget-content-item" key={index}>
                         <CountersWave number={item.number} title={item.title} img={item.img} />

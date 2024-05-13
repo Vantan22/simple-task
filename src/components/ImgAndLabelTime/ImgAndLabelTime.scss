@@ -1,0 +1,36 @@
+@import "../../assets/sass/color.scss";
+.imgAndLabelTime{
+    display: flex;
+    align-items: center;
+    &-img{
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+    }
+    &-title{
+        margin-left: 12px;
+        &-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &-name{
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 21px;
+                color: $darkColor;
+                margin-right: 4px;
+            }
+            &-label{
+                font-size: 14px;
+                line-height: 21px;
+                color: $grayColorDark;
+                font-weight: 400;
+            }
+        }
+        &-time{
+            font-size: 12px;
+            line-height: 14px;
+            color: $grayColorDark;
+        }  
+    }
+}
