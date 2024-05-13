@@ -1,0 +1,35 @@
+@import 'color';
+.wrapCheckBox{
+    display: flex;
+    align-items: center;
+    // gap: 10px;
+    cursor: pointer;
+    &-input{
+        display: none;
+        width: 20px;
+        height: 20px;
+    }
+    &-check{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        background-color: $blueColor;
+        color: $blueColor;
+        transition: ease-in-out;
+        animation-duration: 300ms;
+        border-radius: 2px;
+    }
+    &-uncheck{
+        width: 20px;
+        height: 20px;
+        background-color: $grayColor;
+        border-radius: 2px;
+    }
+    &-label{
+        font-size: 14px;
+        color: $grayColorDark;
+        margin-left: 12px;
+    }
+}
