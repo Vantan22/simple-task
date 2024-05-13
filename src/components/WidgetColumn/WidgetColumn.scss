@@ -20,7 +20,7 @@
             font-weight: 500;
             cursor: pointer;
             &-link {
-                font-size: 12px;
+                font-size: 14px;
                 line-height: 16px;
                 color: $blueColor;
                 text-decoration: none;
@@ -38,7 +38,7 @@
         border-radius: 8px;
         border: 1px solid $grayColor;
         &-listItem {
-            margin: 5px 24px;
+            margin: 6px 24px;
             &-item {
                 cursor: pointer;
                 width: 100%;
