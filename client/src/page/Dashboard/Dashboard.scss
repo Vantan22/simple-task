@@ -1,0 +1,12 @@
+.contentDashboard{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    // width: calc(100vw - 252px);
+    &-left{
+        width: 752px;
+    }
+    &-right{
+        width: 364px;
+    }
+}

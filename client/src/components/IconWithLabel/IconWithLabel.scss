@@ -1,0 +1,50 @@
+@import 'color';
+
+.iconWithLabel{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: 226px;
+    height: 42px;
+    line-height: 16px;
+    margin: auto;
+    border-radius: 8px;
+    &:hover{
+        background-color: $grayColor;
+    }
+    &-icon{
+        padding: 9px 12px;
+        color: $grayColorDark;
+    }
+    &-label{
+        font-size: 14px;
+        color: $darkColor;
+    }
+}
+.iconWithLabelactive{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: 226px;
+    height: 42px;
+    line-height: 16px;
+    margin: auto;
+    border-radius: 8px;
+    background-color: $whiteColor;
+    color: $blueColor;
+    &:hover{
+        background-color: $grayColor;
+    }
+    &-icon{
+        padding: 9px 12px;
+        color: $blueColor;
+    }
+    .iconWithLabel-label{
+        font-size: 14px;
+        color: $blueColor!important;
+    }
+}

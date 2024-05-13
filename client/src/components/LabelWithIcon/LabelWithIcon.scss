@@ -1,0 +1,17 @@
+.labelWithIcon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 207px;
+    margin: auto;
+    margin-bottom: 12px;
+    &-label{
+        font-size: 14px;
+        color: #778ca2;
+    }
+    &-icon{
+        width: 14px;
+        height: 17px;
+        cursor: pointer;
+    }
+}

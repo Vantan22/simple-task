@@ -1,0 +1,23 @@
+@import 'color';
+
+.inputWithLabel {
+    display: flex;
+    flex-direction: column;
+    column-gap: 12px;
+    width: 100%;
+    margin-bottom: 12px;
+    position: relative;
+    &-label {
+        font-size: 12px;
+        line-height: 18px;
+        color: $darkColor;
+        margin-bottom: 12px;
+    }
+    &-input {
+        height: 52px;
+        color: $darkColor!important;
+    }
+    .textErrorValidator{
+        bottom: -14px;
+    }
+}
