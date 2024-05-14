@@ -1,3 +1,4 @@
 .idea
 .gitignore
 /firebase
+./server/node_modules
