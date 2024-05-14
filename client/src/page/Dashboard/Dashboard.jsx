@@ -7,6 +7,7 @@ import CountersWave from '../../components/CountersWave/CountersWave.jsx'
 import { listWidget } from '../../contains/list-widget.js'
 import { listActivity } from '../../contains/list-activity.js'
 import WidgetCoumn from '../../components/WidgetColumn/WidgetCoumn.jsx'
+import { Link } from 'react-router-dom'
 const Dashboard = () => {
   return (
     <Home>

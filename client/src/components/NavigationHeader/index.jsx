@@ -8,11 +8,26 @@ import IconAdd from '../../assets/image/IconAdd.svg'
 import IconApp from '../../assets/image/IconApp.svg'
 import ImgUser from '../../assets/image/ImgUser/User1.jpg'
 const NavigationHeader = () => {
+    const titleHeaderHandle = () => {
+        console.log('param',window.location.href.split('/').pop());
+        let title='Projects'
+        switch (window.location.href.split('/').pop()) {
+            case 'projects':
+                title = 'Projects'
+                break;
+            case 'dashboard':
+                title = 'dashboard'
+                break;
+            default:
+        }
+        return title
+    }
+    
   return (
     <div className="navigationHeader">
         <div className="navigationHeader-left">
             <img className='navigationHeader-left-icon' src={IconPull} alt='iconPull'/>
-            <div className="navigationHeader-left-name">Dashboard</div>
+            <div className="navigationHeader-left-name">{titleHeaderHandle()}</div>
         </div>
         <div className="navigationHeader-right">
             <div className="navigationHeader-right-search">

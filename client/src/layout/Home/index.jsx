@@ -7,7 +7,7 @@ import { listNavigation, lastestProjects } from '../../contains/list-navigation.
 import Logo from '../../assets/image/logo.svg'
 import IconDown from "../../assets/image/IconArrowDown.svg"
 import IconAdd from "../../assets/image/IconAdd.svg"
-import NavigationHeader from '../../components/NavigationHeader/NavigationHeader.jsx';
+import NavigationHeader from '../../components/NavigationHeader';
 const Home = ({ children }) => {
 
 

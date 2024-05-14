@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './index.css'
 import 'antd/dist/reset.css';
-import './assets/sass/color.scss';
+import '@/assets/sass/color.scss';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
