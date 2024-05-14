@@ -1,11 +1,12 @@
-import { Navigate, useRoutes } from 'react-router-dom';
+import { Navigate, useRoutes } from 'react-router-dom'
 
-import Login from './page/Login/Login.jsx';
-import SignUp from './page/SignUp/SignUp.jsx';
-import PasswordRecovery from './page/PasswordRecovery/PasswordRecovery.jsx';
+import Login from './page/Login/Login.jsx'
+import SignUp from './page/SignUp/SignUp.jsx'
+import PasswordRecovery from './page/PasswordRecovery/PasswordRecovery.jsx'
 import Home from './layout/Home/index.jsx'
 import Dashboard from './page/Dashboard/Dashboard.jsx'
-import Projects from './page/Projects/Projects.jsx';
+import Projects from './page/Projects/Projects.jsx'
+
 const Routes = () => {
   return useRoutes([
     {
@@ -36,8 +37,7 @@ const Routes = () => {
       path: '/projects',
       element: <Projects />,
     },
+  ])
+}
 
-  ]);
-};
-
-export { Routes };
+export { Routes }

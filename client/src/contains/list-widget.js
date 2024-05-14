@@ -1,5 +1,5 @@
-import Blue from '../assets/image/ImgCountersWave/Blue.svg'
-import Green from '../assets/image/ImgCountersWave/Green.svg'
+import Blue from '@assets/image/ImgCountersWave/Blue.svg'
+import Green from '@assets/image/ImgCountersWave/Green.svg'
 
 const listWidget = [
   {

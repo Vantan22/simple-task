@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import Auth from '../../layout/Auth/index.jsx'
-import InputWithLabel from '../../components/base/input/InputWithLabel.jsx'
-import CheckBox from '../../components/base/checkbox/CheckBox.jsx'
-import { Button } from 'antd';
-import { Link } from 'react-router-dom'
-import SignInWithSocial from '../../components/SignInWithSocial/SignInWithSocial.jsx'
-import NavigatorAuthContent from '../../components/NavigatorAuthContent/NavigatorAuthContent.jsx'
+import Auth from '@layout/Auth/index.jsx'
+import InputWithLabel from '@components/base/input/InputWithLabel.jsx'
+import CheckBox from '@components/base/checkbox/CheckBox.jsx'
+import { Button } from 'antd'
+import SignInWithSocial from '@components/SignInWithSocial/SignInWithSocial.jsx'
+import NavigatorAuthContent from '@components/NavigatorAuthContent/NavigatorAuthContent.jsx'
+import PasswordWithlabel from '@components/base/input/PasswordWithlabel.jsx'
+import { Controller, useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { signUpValidator } from '@contains/auth-validator-config.js'
 import './SignUp.scss'
-import PasswordWithlabel from '../../components/base/input/PasswordWithlabel.jsx';
-import { Controller, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { signUpValidator } from '../../contains/auth-validator-config.js';
+
 const SignUp = () => {
-  const [agree, setAgree] = useState(false);
-  const [error, setError] = useState("");
+  const [agree, setAgree] = useState(false)
+  const [error, setError] = useState('')
   const {
     handleSubmit,
     control,
@@ -21,26 +21,24 @@ const SignUp = () => {
   } = useForm({
     mode: 'onBlur',
     resolver: yupResolver(signUpValidator),
-  });
+  })
 
-  const onSubmit = async (data,e) => {
-    e.preventDefault();
+  const onSubmit = async (data, e) => {
+    e.preventDefault()
     if (!agree) {
-      setError('You must agree to the terms and conditions.');
-      return;
+      setError('You must agree to the terms and conditions.')
+      return
     }
-    console.log(data);
+    console.log(data)
   }
   const handleCheckboxChange = () => {
-    setAgree(!agree);
-    setError("");
-  };
+    setAgree(!agree)
+    setError('')
+  }
   return (
     <Auth>
-      <div className='signUpForm'>
-        <div className='signUpForm-title'>
-          Create account
-        </div>
+      <div className="signUpForm">
+        <div className="signUpForm-title">Create account</div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="fullName"
@@ -79,7 +77,8 @@ const SignUp = () => {
                   onBlur: () => field.onBlur(),
                 }}
               />
-            )} />
+            )}
+          />
 
           <Controller
             name="password"
@@ -101,24 +100,18 @@ const SignUp = () => {
           />
 
           <div className="signUpForm-wrapCheckAndForgot">
-            <CheckBox label="I agree with terms & conditions" 
-            checked={agree}
-            onChange={handleCheckboxChange}
-            />
+            <CheckBox label="I agree with terms & conditions" checked={agree} onChange={handleCheckboxChange} />
             {error && <div className="textErrorValidator">{error}</div>}
           </div>
 
-          <Button
-            className="signUpForm-btn"
-            htmlType="submit"
-          >
+          <Button className="signUpForm-btn" htmlType="submit">
             Sign Up
           </Button>
 
-          <div className='signUpForm-social'>
+          <div className="signUpForm-social">
             <SignInWithSocial />
           </div>
-          <div className='signUpForm-navigatorAuthContent'>
+          <div className="signUpForm-navigatorAuthContent">
             <NavigatorAuthContent content="Already have an account?" contentLink="Login here" to="/login" />
           </div>
         </form>
