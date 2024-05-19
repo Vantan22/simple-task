@@ -1,16 +1,19 @@
-const http=require('http');
-const routes=require('./routes.js')
-const express=require('express')
-const app=express()
+const http = require("http");
+const routes = require("./routes.js");
+const express = require("express");
+const app = express();
+const path = require("path");
+const bodyParser = require("body-parser");
+const adminRouter = require("./routers/admin");
+const shopRouter = require("./routers/shop");
+const rootDir = require("./util/path");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use("/admin", adminRouter);
+app.use(shopRouter);
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  console.log('middle 1')
-  next();
-})
-app.use((req, res, next) => {
-  console.log('middle 2')
-  res.send('<h1>Hello World</h1>')
-})
-app.listen(3000)
+  res.status(404).sendFile(path.join(rootDir, "views", "404.html"));
+});
+app.listen(3000);
