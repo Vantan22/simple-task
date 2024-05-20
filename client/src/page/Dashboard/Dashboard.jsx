@@ -3,16 +3,17 @@ import './Dashboard.scss'
 import Home from '@layout/Home/index.jsx'
 import Widget from '@components/Widget/Widget.jsx'
 
-import { listWidget } from '@contains/list-widget.js'
+import { listWidget, listTaskAndEvent } from '@contains/list-widget.js'
 import { listActivity } from '@contains/list-activity.js'
-import WidgetCoumn from '@components/WidgetColumn/WidgetCoumn.jsx'
+import WidgetCoumn from '@components/Widget/WidgetColumn/WidgetCoumn.jsx'
 
 const Dashboard = () => {
   return (
     <Home>
       <div className="contentDashboard">
         <div className="contentDashboard-left">
-          <Widget title="Tasks overview" nameSeeAll="See all tasks" linkSeeAll="/" listWidget={listWidget} />
+          <Widget title="Tasks overview" nameSeeAll="See all tasks" linkSeeAll="/" listWidget={listWidget} typeWidget="counterWave" />
+          <Widget title="Tasks and events" nameSeeAll="See all events" linkSeeAll="/" listWidget={listTaskAndEvent} typeWidget="taskAndEvent" />
         </div>
 
         <div className="contentDashboard-right">

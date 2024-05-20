@@ -82,4 +82,19 @@ const listActivity = [
     time: '2 hour ago',
   },
 ]
-export { listActivity }
+
+const listUserAdd = [
+  {
+    img: User1,
+  },
+  {
+    img: User2,
+  },
+  {
+    img: User3,
+  },
+  {
+    img: User4,
+  },
+]
+export { listActivity , listUserAdd}

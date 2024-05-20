@@ -1,7 +1,7 @@
 import React from 'react'
 import './WidgetColumn.scss'
 import { Link } from 'react-router-dom'
-import ImgAndLabelTime from '../ImgAndLabelTime/ImgAndLabelTime.jsx'
+import ImgAndLabelTime from '../../ImgAndLabelTime/ImgAndLabelTime.jsx'
 import IconArrownRight from '@assets/image/IconArrowRight.svg'
 
 const WidgetCoumn = ({ title, nameSeeAll, linkSeeAll, listWidget }) => {

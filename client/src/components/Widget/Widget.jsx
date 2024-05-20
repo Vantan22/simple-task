@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 
 import './Widget.scss'
 import IconArrownRight from '@assets/image/IconArrowRight.svg'
-import CountersWave from '../CountersWave/CountersWave.jsx'
+import CountersWave from './CountersWave/CountersWave.jsx'
+import WidgetTask from './WidgetTask/WidgetTask.jsx'
 
-const Widget = ({ title, nameSeeAll, linkSeeAll, listWidget }) => {
+const Widget = ({ title, nameSeeAll, linkSeeAll, listWidget, typeWidget }) => {
   return (
     <div className="widget">
       <div className="widget-navigation">
@@ -20,7 +21,10 @@ const Widget = ({ title, nameSeeAll, linkSeeAll, listWidget }) => {
       <div className="widget-content">
         {listWidget.map((item, index) => (
           <div className="widget-content-item" key={index}>
-            <CountersWave number={item.number} title={item.title} img={item.img} />
+          {typeWidget === 'counterWave' ? 
+          <CountersWave number={item.number} title={item.title} img={item.img} /> : 
+          <WidgetTask title={item.title} typeTask={item.typeTask} date={item.date} label={item.label} content={item.content} listUser={item.listUser} />}
+
           </div>
         ))}
       </div>

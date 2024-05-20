@@ -1,0 +1,83 @@
+@import "@/assets/sass/color.scss";
+.widgetTask {
+    min-width: 364px;
+    min-height: 388px;
+    border-radius: 8px;
+    background-color: $whiteColorLight;
+    border: 1px solid $grayColor;
+    &-title {
+        @include text-config(14px, 500, 21px, $grayColorDark);
+        margin-left: 24px;
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+    &-calender {
+        display: flex;
+        align-items: center;
+        height: 56px;
+        justify-content: space-between;
+        background-color: $whiteColor;
+        padding-left: 24px;
+        padding-right: 24px;
+        &-left {
+            display: flex;
+            align-items: center;
+            &-icon {
+                width: 14px;
+                height: 14px;
+                margin-right: 6px;
+            }
+            &-text {
+                @include text-config(14px, 400, 21px, $grayColorDark);
+            }
+        }
+        &-right {
+            display: flex;
+            padding: 3px 16px 4px 16px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 99px;
+            border: 1px solid $grayColor;
+            @include text-config(14px, 400, 21px, $grayColorDark);
+        }
+    }
+    &-content {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        &-label {
+            @include text-config(20px, 600, 30px, $darkColor);
+        }
+        &-content {
+            @include text-config(14px, 300, 21px, $darkColor);
+        }
+    }
+    &-listUserAdd {
+        display: flex;
+        margin-left: 24px;
+        padding-right: 24px;
+        margin-top: 46px;
+        height: 28px;
+    }
+    &-slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-top: 24px;
+        &-label {
+            @include text-config(12px, 400, 18px, $grayColorDark);
+        }
+        &-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+    }
+}
