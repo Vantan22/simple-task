@@ -10,14 +10,13 @@ import ImgUser from '@assets/image/ImgUser/User1.jpg'
 
 const NavigationHeader = () => {
   const titleHeaderHandle = () => {
-    console.log('param', window.location.href.split('/').pop())
     let title = 'Projects'
     switch (window.location.href.split('/').pop()) {
       case 'projects':
-        title = 'Projects'
+        title = 'All Projects'
         break
       case 'dashboard':
-        title = 'dashboard'
+        title = 'Dashboard'
         break
       default:
     }
