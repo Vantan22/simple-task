@@ -31,6 +31,16 @@ Request:
 POST /signup
 ```
 
+Body:
+
+```JSON
+{
+  "fullName": "Your Name",
+  "email":"test@gmail.com",
+  "password":"123456789"
+}
+```
+
 Response:
 
 ```json
