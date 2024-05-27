@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { signup } = require("../controllers/auth");
+const { signup, login } = require("../controllers/auth");
 const { body } = require("express-validator");
 router.post(
   "/signup",
@@ -12,5 +12,7 @@ router.post(
   ],
   signup,
 );
+
+router.post("/login", login);
 
 module.exports = router;
