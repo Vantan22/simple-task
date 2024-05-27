@@ -1,6 +1,13 @@
+require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+
+const authRoutes = require("./routes/auth");
+
+const port = process.env.PORT || 3000;
+const mongoUri = process.env.MONGODB_URI;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -16,6 +23,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/auth", authRoutes);
+
 app.use((error, req, res, next) => {
   console.log(error);
   const status = error.statusCode || 500;
@@ -28,12 +37,9 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/simple-task", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoUri)
   .then(() => {
     console.log("Connected to MongoDB...");
-    app.listen(8080);
+    app.listen(port);
   })
   .catch((err) => console.log(err));
