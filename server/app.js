@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
 
 const port = process.env.PORT || 3000;
 const mongoUri = process.env.MONGODB_URI;
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/auth", authRoutes);
+app.use(userRoutes);
 
 app.use((error, req, res, next) => {
   console.log(error);
