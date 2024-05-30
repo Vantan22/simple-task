@@ -16,6 +16,12 @@ const userSchema = new mongoose.Schema(
     },
     resetCode: String,
     resetCodeExpiration: Date,
+    projects: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Project",
+      },
+    ],
   },
   {
     timestamps: true,
