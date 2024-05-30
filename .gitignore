@@ -1,6 +1,6 @@
 .idea
 .gitignore
-/firebase
+server/firebase
 ./server/node_modules
 server/node_modules
 server/.env

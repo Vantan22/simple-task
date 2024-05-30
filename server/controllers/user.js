@@ -24,7 +24,6 @@ exports.getUser = async (req, res, next) => {
 exports.getUsers = async (req, res, next) => {
   try {
     const users = await User.find();
-    console.log(users);
     res.status(200).json(
       users.map((user) => {
         return {

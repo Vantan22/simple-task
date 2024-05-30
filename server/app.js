@@ -4,8 +4,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+//routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const projectRoutes = require("./routes/project");
 
 const port = process.env.PORT || 3000;
 const mongoUri = process.env.MONGODB_URI;
@@ -26,6 +28,7 @@ app.use((req, res, next) => {
 
 app.use("/auth", authRoutes);
 app.use(userRoutes);
+app.use(projectRoutes);
 
 app.use((error, req, res, next) => {
   console.log(error);

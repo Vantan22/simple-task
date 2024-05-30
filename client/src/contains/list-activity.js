@@ -18,7 +18,7 @@ const listActivity = [
   {
     name: 'Richard',
     img: User2,
-    title: 'created new project',
+    title: 'created new project.js',
     time: '10 min ago',
   },
   {
@@ -42,7 +42,7 @@ const listActivity = [
   {
     name: 'Elnora',
     img: User6,
-    title: 'created new project',
+    title: 'created new project.js',
     time: '30 min ago',
   },
   {
@@ -60,7 +60,7 @@ const listActivity = [
   {
     name: 'Richard',
     img: User9,
-    title: 'created new project',
+    title: 'created new project.js',
     time: '2 hour ago',
   },
   {
@@ -97,4 +97,4 @@ const listUserAdd = [
     img: User4,
   },
 ]
-export { listActivity , listUserAdd}
+export { listActivity, listUserAdd }
