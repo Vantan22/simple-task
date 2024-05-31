@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const authMiddleware = require("../middleware/is-auth");
-const { body } = require("express-validator");
+const { upload, uploadFilesToFirebase } = require("../middleware/file-handler");
 const {
   getProjects,
   getProject,
@@ -9,19 +9,15 @@ const {
   updateProject,
   deleteProject,
 } = require("../controllers/project");
-const projectValidationRules = require("../validator/project/project");
-const uploadFileMiddleware = require("../middleware/file-handler");
 
-// router.get("/projects", authMiddleware, getProjects);
-
-// router.get("/project/:projectId", authMiddleware, getProject);
 router.post(
-  "/project",
+  "/project", // Validation rules for the request body
   authMiddleware,
-  uploadFileMiddleware.single("image"),
-  projectValidationRules,
+  upload.array("image", 1), // Middleware for handling file uploads
+  uploadFilesToFirebase,
   createProject,
 );
+// router.get("/project/:projectId", authMiddleware, getProject);
 // router.patch("/project/:projectId", authMiddleware, updateProject);
 // router.delete("/project/:projectId", authMiddleware, deleteProject);
 
