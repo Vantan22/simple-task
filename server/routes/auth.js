@@ -5,6 +5,7 @@ const {
   login,
   resetPassword,
   newPassword,
+  confirmation,
 } = require("../controllers/auth");
 const { body } = require("express-validator");
 
@@ -17,6 +18,17 @@ router.post(
     body("password").isLength({ min: 6 }).withMessage("Password is required"),
   ],
   signup,
+);
+
+router.post(
+  "/confirmation",
+  [
+    body("email").isEmail().withMessage("Email is required"),
+    body("confirmationCode")
+      .isLength({ min: 6 })
+      .withMessage("Confirmation code is required"),
+  ],
+  confirmation,
 );
 
 router.post("/login", login);
