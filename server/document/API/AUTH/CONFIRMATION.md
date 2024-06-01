@@ -12,7 +12,7 @@ The base URL for all API requests is:
 
 ## Endpoints
 
-### `POST /signup`
+### `POST /confirmation`
 
 Returns object with userId and message.
 
@@ -21,23 +21,22 @@ Returns object with userId and message.
 Returns a JSON object with the following properties:
 
 - `message`: A success message indicating that the user was created.
-- `confirmationCode`: The confirmation code sent to the user's email.
+- `userId`: The ID of the newly created user.
 
 ### Example
 
 Request:
 
 ```
-POST /signup
+POST /confirmation
 ```
 
 Body:
 
 ```JSON
 {
-  "fullName": "Your Name",
   "email":"test@gmail.com",
-  "password":"123456789"
+  "confirmationCode":"688371"
 }
 ```
 
@@ -45,8 +44,8 @@ Response:
 
 ```json
 {
-  "message": "Confirmation code sent.",
-  "confirmationCode": "688371"
+  "message": "Account confirmed!",
+  "userId": "665ae4ee9e26f6c714ac5279"
 }
 
 ```

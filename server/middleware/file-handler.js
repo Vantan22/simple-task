@@ -6,20 +6,27 @@ const storage = multer.memoryStorage();
 const bucket = require("../firebase/firebaseConfig");
 //Filter file type
 const fileFilter = (req, file, cb) => {
-  const filetypes = /jpeg|jpg|png|pdf|doc|docx|xlsx|fig/;
+  const filetypes = /jpeg|jpg|png/;
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
   const mimetype = filetypes.test(file.mimetype);
 
   if (mimetype && extname) {
+    // Upload only image files less than 5MB
+    if (file.size > 5 * 1024 * 1024) {
+      return cb(new Error("Image file size exceeds the limit (5MB)"));
+    }
     return cb(null, true);
   } else {
-    cb(new Error("File type not supported"), false);
+    // Upload files of any type if the size is less than 30MB
+    if (file.size > 30 * 1024 * 1024) {
+      return cb(new Error("File size exceeds the limit (30MB)"));
+    }
+    return cb(new Error("File type not supported"), false);
   }
 };
 const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
-  limits: { fileSize: 10 * 1024 * 1024 },
 });
 
 const uploadFilesToFirebase = async (req, res, next) => {
