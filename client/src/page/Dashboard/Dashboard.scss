@@ -4,6 +4,10 @@
     gap: 24px;
     // width: calc(100vw - 252px);
     &-left{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        flex: 1;
         width: 752px;
     }
     &-right{

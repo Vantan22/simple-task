@@ -1,21 +1,19 @@
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import './IconWithLabel.scss';
+import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import './IconWithLabel.scss'
+
 const IconWithLabel = ({ icon, label, to }) => {
-    const handleClick = () => {
-        onClick();
-    };
-    return (
-        <Link className={'iconWithLabel'} to={to} onClick={handleClick}>
-            <img className='iconWithLabel-icon' src={icon} alt='iconWithLabel-icon' />
-            <div className="iconWithLabel-label">{label}</div>
-        </Link>
-    );
-};
+  return (
+    <NavLink activeClassName="current" exact className="iconWithLabel" to={to}>
+      <img className="iconWithLabel-icon" src={icon} alt="iconWithLabel-icon" />
+      <div className="iconWithLabel-label">{label}</div>
+    </NavLink>
+  )
+}
 
 IconWithLabel.propTypes = {
-    label: PropTypes.string,
-    to: PropTypes.string,
-};
+  label: PropTypes.string,
+  to: PropTypes.string,
+}
 
-export default IconWithLabel;
+export default IconWithLabel

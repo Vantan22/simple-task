@@ -1,21 +1,18 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import './Checkbox.scss';
+import { useState } from 'react'
+import PropTypes from 'prop-types'
+import './Checkbox.scss'
+
 const CheckBox = ({ label, onChange }) => {
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(false)
 
   const handleCheckboxChange = () => {
-    setChecked(!isChecked);
-    onChange(!isChecked);
-  };
+    setChecked(!isChecked)
+    onChange(!isChecked)
+  }
   return (
     <label className="wrapCheckBox">
       <input type="checkbox" className="wrapCheckBox-input" checked={isChecked} onChange={handleCheckboxChange} />
-      <div
-        className={`wrapCheckBox-${
-          isChecked ? 'check' : 'uncheck'
-        }`}
-      >
+      <div className={`wrapCheckBox-${isChecked ? 'check' : 'uncheck'}`}>
         {isChecked && (
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="8" viewBox="0 0 11 8" fill="none">
             <path
@@ -27,16 +24,16 @@ const CheckBox = ({ label, onChange }) => {
       </div>
       <span className="wrapCheckBox-label">{label}</span>
     </label>
-  );
-};
+  )
+}
 
 CheckBox.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
-};
+}
 
 CheckBox.defaultProps = {
   label: 'Checkbox label',
   onChange: () => {},
-};
-export default CheckBox;
+}
+export default CheckBox

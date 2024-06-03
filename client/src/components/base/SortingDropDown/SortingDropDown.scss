@@ -1,0 +1,21 @@
+@import "@/assets/sass/color.scss";
+.sortingDropDown {
+    display: flex;
+    align-items: center;
+    min-width: 118px;
+    height: 34px;
+    border: 1px solid $grayColor;
+    background-color: $whiteColorLight;
+    &-title {
+        display: flex;
+        padding: 6px 12px 7px 12px;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid $grayColor;
+        @include text-config(14px, 400, 21px, $grayColorDark);
+        user-select: none;
+    }
+    &-select {
+        @include text-config(14px, 400, 21px, $grayColorDark);
+    }
+}

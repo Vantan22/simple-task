@@ -6,3 +6,18 @@ $grayColor: #E8ECEF;
 $grayColorDark: #778CA2;
 $pinkColor: #FE4D97;
 $pinkColorLight: #FE4D97;
+
+
+
+@mixin text-config($font-size,$font-weight, $line-height, $color) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color: $color;
+}
+
+@mixin flex-gap-col($gap) {
+    display: flex;
+    flex-direction: column;
+    column-gap: $gap;
+}

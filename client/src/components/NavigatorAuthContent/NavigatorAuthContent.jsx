@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import './NavigatorAuthContent.scss';
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import './NavigatorAuthContent.scss'
+
 const NavigatorAuthContent = ({ content, contentLink, to }) => {
   return (
     <div className="navigatorAuthContent">
@@ -9,13 +10,13 @@ const NavigatorAuthContent = ({ content, contentLink, to }) => {
         {contentLink}
       </Link>
     </div>
-  );
-};
+  )
+}
 
 NavigatorAuthContent.propTypes = {
   content: PropTypes.string,
   contentLink: PropTypes.string,
   to: PropTypes.string,
-};
+}
 
-export default NavigatorAuthContent;
+export default NavigatorAuthContent
