@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const projectRoutes = require("./routes/project");
+const taskRoutes = require("./routes/task");
 
 const port = process.env.PORT || 3000;
 const mongoUri = process.env.MONGODB_URI;
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 app.use("/auth", authRoutes);
 app.use(userRoutes);
 app.use(projectRoutes);
+app.use(taskRoutes);
 
 app.use((error, req, res, next) => {
   console.log(error);
