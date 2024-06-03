@@ -34,6 +34,7 @@ const uploadFilesToFirebase = async (req, res, next) => {
     return res.status(400).send("No files uploaded.");
   }
   const fileUrls = [];
+  const attachments = [];
 
   for (const file of req.files) {
     const blob = bucket.file(`uploads/${Date.now()}-${file.originalname}`);
@@ -51,9 +52,13 @@ const uploadFilesToFirebase = async (req, res, next) => {
     blobStream.on("finish", async () => {
       const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
       fileUrls.push(publicUrl);
+      attachments.push({
+        url: publicUrl,
+        filename: file.originalname,
+      });
 
       if (fileUrls.length === req.files.length) {
-        req.fileUrls = fileUrls;
+        req.attachments = attachments;
         next();
       }
     });
